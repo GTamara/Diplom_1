@@ -20,4 +20,4 @@
 
 **Запуск автотестов и создание HTML-отчета о покрытии**
 
->  `$ pytest --cov=tests --cov-report=html`
+>  `$ --cov=tests --cov-branch --cov-report=html`
