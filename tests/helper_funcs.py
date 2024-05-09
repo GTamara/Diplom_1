@@ -9,7 +9,7 @@ class HelperFuncs:
 
     @staticmethod
     def create_burger_instance(
-        attrs: dict[str, Any]
+            attrs: dict[str, Any]
     ):
         bun = Mock()
         bun.name = attrs['bun'].get('name')
@@ -27,12 +27,12 @@ class HelperFuncs:
             elem.get_price.return_value = i.get('price')
             elem.get_name.return_value = i.get('name')
             elem.get_type.return_value = i.get('type')
+
             def __eq__(self, other):
-                print('!!!!!!!!!!!!!!!!', self.name, other.name)
                 return (
-                    self.name == other.name and
-                    self.price == other.price and
-                    self.type == other.type
+                        self.name == other.name and
+                        self.price == other.price and
+                        self.type == other.type
                 )
 
             elem.__eq__ = __eq__
