@@ -1,7 +1,7 @@
 from typing import List
 
-from praktikum.bun import Bun
-from praktikum.ingredient import Ingredient
+from bun import Bun
+from ingredient import Ingredient
 
 
 class Burger:
@@ -13,7 +13,7 @@ class Burger:
     """
 
     def __init__(self):
-        self.bun = None
+        self.bun: Bun = None
         self.ingredients: List[Ingredient] = []
 
     def set_buns(self, bun: Bun):
@@ -30,10 +30,8 @@ class Burger:
 
     def get_price(self) -> float:
         price = self.bun.get_price() * 2
-
         for ingredient in self.ingredients:
             price += ingredient.get_price()
-
         return price
 
     def get_receipt(self) -> str:
